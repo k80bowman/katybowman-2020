@@ -11,12 +11,14 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Old+Standard+TT|Open+Sans'}
     ]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    '~assets/scss/variables.scss'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -31,12 +33,16 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/apollo'],
+  modules: ['@nuxtjs/apollo', '@nuxtjs/style-resources'],
 
   apollo: {
     clientConfigs: {
       default: '~/apollo/client-configs/default.js'
     }
+  },
+  
+  styleResources: {
+    scss: ['./assets/scss/*.scss']
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
