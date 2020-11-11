@@ -1,0 +1,11 @@
+query featuredPublication {
+  publications(orderBy: date_DESC, first: 1) {
+    id
+    date
+    excerpt
+    publicationName
+    title
+    articleLink
+    articleType
+  }
+}

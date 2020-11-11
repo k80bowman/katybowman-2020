@@ -7,19 +7,15 @@
 
 <style scoped lang='scss'>
   .nav {
-    width: 95%;
-    margin: 1rem auto;
+    margin: 0.5rem auto 3.5rem;
     border-top: solid 1px $k80-red;
     border-bottom: solid 1px $k80-red;
     display: flex;
     justify-content: center;
 
-
-
     &__link {
       font-family: $heading-stack;
       font-size: 1.25em;
-      font-weight: bold;
       color: $k80-text;
       padding: 1rem 0;
       width: 50%;
@@ -27,7 +23,7 @@
       transition: background-color 1s ease;
 
       @media #{$tablet-landscape} {
-        font-size: 2em;
+        font-size: 1.5em;
       }
     }
 

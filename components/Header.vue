@@ -17,7 +17,7 @@
     color: $k80-text;
     text-align: center;
     font-weight: bold;
-    margin: 1rem 0;
+    margin: 1rem 0 0.5rem;
 
     @media #{$tablet-landscape} {
       font-size: 4em;
