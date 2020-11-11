@@ -37,7 +37,9 @@ export default {
 
   apollo: {
     clientConfigs: {
-      default: '~/apollo/client-configs/default.js'
+      default: {
+        httpEndpoint: process.env.GRAPHCMS_URI
+      }
     }
   },
   
@@ -47,5 +49,5 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-  }
+  },
 }
