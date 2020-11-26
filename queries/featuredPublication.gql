@@ -1,11 +1,18 @@
 query featuredPublication {
-  publications(orderBy: date_DESC, first: 1) {
+  featuredPublication: posts(first: 1, orderBy: date_DESC, where: {publication: true, tags_contains_all: featured}) {
     id
-    date
-    excerpt
-    publicationName
-    title
     articleLink
-    articleType
+    bookImageAltText
+    bookImage {
+      url
+    }
+    category
+    coverImageAltText
+    coverImageSourceUrl
+    excerpt
+    date
+    publicationName
+    tags
+    title
   }
 }
