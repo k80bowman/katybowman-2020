@@ -16,7 +16,3 @@ export default {
   props:['posts']
 }
 </script>
-
-<style scoped lang='scss'>
-  
-</style>

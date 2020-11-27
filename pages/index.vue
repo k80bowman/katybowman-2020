@@ -38,19 +38,7 @@
 </script>
 
 <style scoped lang='scss'>
-  .index-content {
-    color: $k80-text;
-  }
-
   .featured {
-    margin-bottom: 3rem;
-  }
-
-  h2 {
-    margin-top: 2rem;
-    font-family: $heading-stack;
-    font-size: 3em;
-    font-weight: normal;
-    margin: 2rem 0 1rem;
+    margin-bottom: 3.5rem;
   }
 </style>

@@ -20,6 +20,7 @@ export default {
 <style scoped lang='scss'>
   .publication-card {
     padding-bottom: 1.5rem;
+    margin-top: 1.5rem;
     box-shadow: 0 1px 0 0 $k80-red;
 
     &:hover {

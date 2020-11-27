@@ -1,0 +1,24 @@
+query allPosts {
+  allPosts: posts(orderBy: date_DESC) {
+    articleLink
+    bookImage {
+      url
+    }
+    bookImageAltText
+    bookImageLink
+    category
+    coverImage {
+      url
+    }
+    coverImageAltText
+    coverImageSourceName
+    coverImageSourceUrl
+    date
+    excerpt
+    publication
+    publicationName
+    publishedAt
+    slug
+    title
+  }
+}

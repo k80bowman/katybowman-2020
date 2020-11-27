@@ -5,15 +5,6 @@
   </div>
 </template>
 
-<style scoped lang='scss'>
-  .featured h2 {
-    font-family: $heading-stack;
-    font-size: 3em;
-    font-weight: normal;
-    margin: 1rem 0;
-  }
-</style>
-
 <script>
   export default {
     props:['publication']
