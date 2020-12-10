@@ -1,13 +1,13 @@
 <template>
   <div class='post-card'>
-    <a :href=post.articleLink>
+    <NuxtLink :to=formattedLink>
       <div>
         <p class='post-card__type'>{{ post.articleType }}</p>
         <h3 class='post-card__title'>{{ post.title }}</h3>
         <p class='post-card__excerpt'>{{ post.excerpt }}</p>
         <p class='post-card__date'>{{ this.formattedDate }}</p>
       </div>
-    </a>
+    </NuxtLink>
   </div>
 </template>
 
@@ -23,7 +23,10 @@ export default {
   computed: {
     formattedDate: function () {
       return formatDate(this.post.date);
-    }
+    },
+    formattedLink: function () {
+      return `/post/${this.post.slug}`;
+    },
   }
 }
 </script>

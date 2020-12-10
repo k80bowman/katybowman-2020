@@ -14,7 +14,6 @@
 </template>
 
 <script>
-  import gql from 'graphql-tag'
   import featuredPublicationQuery from '../queries/featuredPublication.gql';
   import homePagePostsQuery from '../queries/homePagePosts.gql';
   
