@@ -1,5 +1,8 @@
 query postQuery($slug: String) {
   post: post(where: {slug: $slug}) {
+    bookImage {
+      url
+    }
     bookImageAltText
     bookImageLink
     category

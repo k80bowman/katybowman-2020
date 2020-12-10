@@ -1,12 +1,19 @@
 <template>
   <div class='post'>
     <h2 v-text='post.title'></h2>
-    <div class='cover-image' v-if='post.coverImage'>
+    <div v-if='post.coverImage'>
       <CoverImage
         :coverImageUrl='post.coverImage.url'
         :coverImageAltText='post.coverImageAltText'
         :coverImageSourceName='post.coverImageSourceName'
         :coverImageSourceUrl='post.coverImageSourceUrl'
+      />
+    </div>
+    <div v-if='post.bookImage'>
+      <BookImage
+        :bookImageUrl='post.bookImage.url'
+        :bookImageAltText='post.bookImageAltText'
+        :bookUrl='post.bookImageLink'
       />
     </div>
     <div v-html='post.content.html'></div>

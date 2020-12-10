@@ -1,6 +1,6 @@
 <template>
   <div class='cover-image'>
-    <img v-bind:src='coverImageUrl' />
+    <img v-bind:src='coverImageUrl' v-bind:alt-text='coverImageAltText' />
     <div v-if=coverImageSourceName class='cover-image__attribution'>
         <span>source: <a v-bind:href='coverImageSourceUrl'>{{ coverImageSourceName }}</a></span>
     </div>
