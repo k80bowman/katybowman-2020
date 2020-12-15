@@ -16,12 +16,19 @@
         :bookUrl='post.bookImageLink'
       />
     </div>
-    <div v-html='post.content.html'></div>
+    <div v-html="$md.render(post.contentMd)"></div>
   </div>
 </template>
 
 <script>
+import prism from 'prismjs';
 import postQuery from '../../queries/post.gql';
+
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-graphql';
+import 'prismjs/components/prism-scss'
+
+import 'prismjs/themes/prism.css'
 
 export default {
   data() {
@@ -36,6 +43,9 @@ export default {
         return { slug: this.$route.params.post }
       }
     }
+  },
+  mounted() {
+    Prism.highlightAll()
   }
 }
 </script>

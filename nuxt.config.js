@@ -33,8 +33,14 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/apollo', '@nuxtjs/style-resources'],
-
+  modules: [
+    '@nuxtjs/apollo',
+    '@nuxtjs/style-resources',
+    '@nuxtjs/markdownit',
+  ],
+  markdownit: {
+    injected: true
+  },
   apollo: {
     clientConfigs: {
       default: {
