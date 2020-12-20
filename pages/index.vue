@@ -2,7 +2,7 @@
   <div class="index-content">
     <div class='featured'>
       <h2>Featured Publication</h2>
-        <div v-for="publication in featuredPublication" :key="publication.id">
+        <div v-for="publication in featuredPublications" :key="publication.id">
           <PublicationCard :publication="publication" />
         </div>
     </div>
@@ -15,22 +15,23 @@
 </template>
 
 <script>
-  import featuredPublicationQuery from '../queries/featuredPublication.gql';
+  import featuredPublicationsQuery from '../queries/featuredPublications.gql';
   import homePagePostsQuery from '../queries/homePagePosts.gql';
   
   export default {
     name: 'Home',
     data() {
       return {
-        featuredPublication: [],
+        featuredPublications: [],
         homePagePosts: [],
         allPostsLink: '/blog',
         allPostsLinkText: 'All Posts',
       }
     },
     apollo: {
-      featuredPublication: {
-        query: featuredPublicationQuery,
+      featuredPublications: {
+        query: featuredPublicationsQuery,
+        variables: { numPosts: 1 },
       },
       homePagePosts: {
         query: homePagePostsQuery,

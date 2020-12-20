@@ -1,5 +1,5 @@
-query featuredPublication {
-  featuredPublication: posts(first: 1, orderBy: date_DESC, where: {publication: true, tags_contains_all: featured}) {
+query featuredPublications($numPosts: Int) {
+  featuredPublications: posts(first: $numPosts, orderBy: date_DESC, where: {publication: true, tags_contains_all: featured}) {
     id
     articleLink
     bookImageAltText

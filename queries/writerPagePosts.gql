@@ -1,0 +1,18 @@
+query writerPagePosts {
+  writerPagePosts: posts(first: 5, where: {tags: writing, tags_contains_none: featured}) {
+    articleLink
+    bookImageAltText
+    bookImageLink
+    category
+    coverImageAltText
+    coverImageSourceName
+    date
+    excerpt
+    id
+    publication
+    publicationName
+    publishedAt
+    slug
+    title
+  }
+}
