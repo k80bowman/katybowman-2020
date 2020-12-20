@@ -1,0 +1,18 @@
+query allPublications {
+  allPublications: posts(orderBy: date_DESC, where: {publication: true}) {
+    id
+    articleLink
+    bookImageAltText
+    bookImage {
+      url
+    }
+    category
+    coverImageAltText
+    coverImageSourceUrl
+    excerpt
+    date
+    publicationName
+    tags
+    title
+  }
+}
