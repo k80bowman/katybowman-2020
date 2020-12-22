@@ -1,7 +1,7 @@
 <template>
   <div class='nav'>
-    <span class='nav__link'>Developer</span>
-    <span class='nav__link'>Writer</span>
+    <NuxtLink to="/developer" class='nav__link'>Developer</NuxtLink>
+    <NuxtLink to="/writer" class='nav__link'>Writer</NuxtLink>
   </div>
 </template>
 

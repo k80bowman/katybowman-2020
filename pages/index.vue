@@ -10,7 +10,7 @@
       <h2>Blog Posts</h2>
       <PostList :posts="homePagePosts" />
     </div>
-    <PageLink :pageLink="allPostsLink" :linkText="allPostsLinkText"/>
+    <PageLink pageLink="/blog" linkText="All Posts"/>
   </div>
 </template>
 
@@ -23,9 +23,7 @@
     data() {
       return {
         featuredPublications: [],
-        homePagePosts: [],
-        allPostsLink: '/blog',
-        allPostsLinkText: 'All Posts',
+        homePagePosts: []
       }
     },
     apollo: {

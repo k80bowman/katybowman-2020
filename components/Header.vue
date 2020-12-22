@@ -1,6 +1,8 @@
 <template>
   <div class='header'>
-    <h1 class='header__name'>Katy Bowman</h1>
+    <NuxtLink to="/">
+      <h1 class='header__name'>Katy Bowman</h1>
+    </NuxtLink>
     <Navigation />
   </div>
 </template>

@@ -5,13 +5,13 @@
       <div v-for="publication in featuredPublications" :key="publication.id">
         <PublicationCard :publication="publication" />
       </div>
-      <PageLink :pageLink="allPublicationsLink" :linkText="allPublicationsLinkText"/>
+      <PageLink pageLink="/publications" linkText="All Publications"/>
     </div>
     <div class="posts">
       <h2>Writing Posts</h2>
       <PostList :posts="writerPagePosts" />
     </div>
-    <PageLink :pageLink="allPostsLink" :linkText="allPostsLinkText"/>
+    <PageLink pageLink="/blog/writing" linkText="All Writing Posts"/>
   </div>
 </template>
 
@@ -24,11 +24,7 @@
     data() {
       return {
         featuredPublications: [],
-        homePagePosts: [],
-        allPublicationsLink: '/publications',
-        allPublicationsLinkText: 'All Publications',
-        allPostsLink: '/blog/writing',
-        allPostsLinkText: 'All Writing Posts',
+        homePagePosts: []
       }
     },
     apollo: {
