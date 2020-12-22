@@ -1,14 +1,20 @@
-query writerPagePosts {
-  writerPagePosts: posts(first: 5, where: {tags_contains_all: writing, tags_contains_none: featured}) {
+query writingPosts {
+  writingPosts: posts(orderBy: date_DESC, where: {tags_contains_all: writing}) {
     articleLink
+    bookImage {
+      url
+    }
     bookImageAltText
     bookImageLink
     category
+    coverImage {
+      url
+    }
     coverImageAltText
     coverImageSourceName
+    coverImageSourceUrl
     date
     excerpt
-    id
     publication
     publicationName
     publishedAt

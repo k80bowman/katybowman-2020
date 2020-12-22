@@ -1,24 +1,24 @@
 <template>
   <div class="posts">
-      <h2>Blog Posts</h2>
-      <PostList :posts="allPosts" />
+      <h2>Blog Posts - Writing</h2>
+      <PostList :posts="writingPosts" />
     </div>
 </template>
 
 <script>
 import gql from 'graphql-tag';
-import allPostsQuery from '../queries/allPosts.gql';
+import writingPostsQuery from '../../queries/writingPosts.gql';
 
 export default {
-  name: 'Blog',
+  name: 'Blog_Writing',
   data() {
     return {
-      allPosts: []
+      writingPosts: []
     }
   },
   apollo: {
-    allPosts: {
-      query: allPostsQuery,
+    writingPosts: {
+      query: writingPostsQuery,
     }
   }
 }
