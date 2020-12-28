@@ -1,0 +1,11 @@
+fragment experienceFields on Experience {
+  dates
+  id
+  organization
+  organizationLink
+  roleType
+  summary {
+    html
+  }
+  title
+}

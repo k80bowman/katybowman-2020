@@ -1,0 +1,18 @@
+query devPagePosts {
+  devPagePosts: posts(first: 5, where: {tags_contains_all: tech}) {
+    articleLink
+    bookImageAltText
+    bookImageLink
+    category
+    coverImageAltText
+    coverImageSourceName
+    date
+    excerpt
+    id
+    publication
+    publicationName
+    publishedAt
+    slug
+    title
+  }
+}
