@@ -17,7 +17,7 @@
 
 <script>
   import gql from 'graphql-tag';
-  import experienceFields from '../queries/experiencesFragment.gql';
+  import { technicalExperiencesQuery, communityExperiencesQuery } from '../queries/experiences.gql';
   
   export default {
     name: 'Developer',
@@ -29,29 +29,10 @@
     },
     apollo: {
       technicalExperiences: {
-        query: gql`
-          query {
-            technicalExperiences: experiences(where: {roleType: Tech}) {
-              ...experienceFields
-            }
-          }
-        `
+        query: technicalExperiencesQuery
       },
       communityExperiences: {
-        query: gql`query {
-          communityExperiences: experiences(where: { roleType: Community }) {
-            dates
-            id
-            organization
-            organizationLink
-            roleType
-            summary {
-              html
-            }
-            title
-          }
-        }
-        `
+        query: communityExperiencesQuery
       }
     }
   }

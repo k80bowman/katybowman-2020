@@ -1,0 +1,23 @@
+fragment experienceFields on Experience {
+  dates
+  id
+  organization
+  organizationLink
+  roleType
+  summary {
+    html
+  }
+  title
+}
+
+query technicalExperiencesQuery {
+  technicalExperiences: experiences(where: {roleType: Tech}) {
+    ...experienceFields
+  }
+}
+
+query communityExperiencesQuery {
+	communityExperiences: experiences(where: {roleType: Community}) {
+    ...experienceFields
+  }
+}

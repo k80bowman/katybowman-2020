@@ -43,9 +43,7 @@ export default {
   },
   apollo: {
     clientConfigs: {
-      default: {
-        httpEndpoint: process.env.GRAPHCMS_URI
-      }
+      default: '~/apollo/config.js'
     }
   },
   
