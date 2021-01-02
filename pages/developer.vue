@@ -15,6 +15,8 @@
         </div>
       </div>
     </div>
+    <h2>Technical Articles</h2>
+    <PostList :posts="devPagePosts" />
     <PageLink pageLink="/blog/developer" linkText="All Technical Articles"/>
   </div>
 </template>
@@ -22,13 +24,15 @@
 <script>
   import gql from 'graphql-tag';
   import { technicalExperiencesQuery, communityExperiencesQuery } from '../queries/experiences.gql';
+  import devPagePostsQuery from '../queries/devPagePosts.gql';
   
   export default {
     name: 'Developer',
     data() {
       return {
         technicalExperiences: [],
-        communityExperiences: []
+        communityExperiences: [],
+        devPagePosts: []
       }
     },
     apollo: {
@@ -37,6 +41,9 @@
       },
       communityExperiences: {
         query: communityExperiencesQuery
+      },
+      devPagePosts: {
+        query: devPagePostsQuery
       }
     }
   }

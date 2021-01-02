@@ -11,13 +11,13 @@ fragment experienceFields on Experience {
 }
 
 query technicalExperiencesQuery {
-  technicalExperiences: experiences(where: {roleType: Tech}) {
+  technicalExperiences: experiences(where: {roleType: Tech}, orderBy: displayOrder_DESC) {
     ...experienceFields
   }
 }
 
 query communityExperiencesQuery {
-	communityExperiences: experiences(where: {roleType: Community}) {
+	communityExperiences: experiences(where: {roleType: Community}, orderBy: displayOrder_DESC) {
     ...experienceFields
   }
 }

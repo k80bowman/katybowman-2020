@@ -1,5 +1,5 @@
 query devPagePosts {
-  devPagePosts: posts(first: 5, where: {tags_contains_all: tech}) {
+  devPagePosts: posts(first: 5, where: {tags_contains_all: tech}, orderBy: date_DESC) {
     articleLink
     bookImageAltText
     bookImageLink

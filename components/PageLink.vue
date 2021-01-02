@@ -14,6 +14,7 @@ export default {
   padding-top: 2rem;
   font-size: 2em;
   color: $k80-text;
+  font-family: $heading-stack;
 
   &:hover {
     color: $k80-red;

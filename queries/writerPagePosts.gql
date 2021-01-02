@@ -1,5 +1,5 @@
 query writerPagePosts {
-  writerPagePosts: posts(first: 5, where: {tags_contains_all: writing, tags_contains_none: featured}) {
+  writerPagePosts: posts(first: 5, where: {tags_contains_all: writing, tags_contains_none: featured}, orderBy: date_DESC) {
     articleLink
     bookImageAltText
     bookImageLink

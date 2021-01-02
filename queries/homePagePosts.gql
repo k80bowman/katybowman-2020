@@ -1,5 +1,5 @@
 query homePagePosts {
-  homePagePosts: posts(first: 5, where: {tags_contains_none: featured}) {
+  homePagePosts: posts(first: 5, where: {tags_contains_none: featured}, orderBy: date_DESC) {
     articleLink
     bookImageAltText
     bookImageLink
