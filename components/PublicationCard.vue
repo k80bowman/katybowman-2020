@@ -2,7 +2,7 @@
   <div class='publication-card'>
     <a :href=publication.articleLink>
       <div>
-        <p class='publication-card__type'>{{ publication.articleType }}</p>
+        <p class='publication-card__type'>{{ this.categoryName }}</p>
         <h3 class='publication-card__title'>{{ publication.title }}</h3>
         <p class='publication-card__excerpt'>{{ publication.excerpt }}</p>
         <p class='publication-card__publication'>{{ publication.publicationName }}</p>
@@ -12,8 +12,15 @@
 </template>
 
 <script>
+import { getCategoryName } from '../helpers/getCategoryName';
+
 export default {
-  props:['publication']
+  props:['publication'],
+  computed: {
+    categoryName: function () {
+      return getCategoryName(this.publication.category)
+    }
+  }
 }
 </script>
 

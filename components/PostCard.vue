@@ -2,7 +2,7 @@
   <div class='post-card'>
     <NuxtLink :to=formattedLink>
       <div>
-        <p class='post-card__type'>{{ post.articleType }}</p>
+        <p class='post-card__type'>{{ this.categoryName }}</p>
         <h3 class='post-card__title'>{{ post.title }}</h3>
         <p class='post-card__excerpt'>{{ post.excerpt }}</p>
         <p class='post-card__date'>{{ this.formattedDate }}</p>
@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import { getCategoryName } from '../helpers/getCategoryName';
+
 const formatDate = (rawDate) => {
   const date = new Date(rawDate);
   const dateArray = date.toDateString().split(' ');
@@ -27,6 +29,9 @@ export default {
     formattedLink: function () {
       return `/post/${this.post.slug}`;
     },
+    categoryName: function () {
+      return getCategoryName(this.post.category)
+    }
   }
 }
 </script>
