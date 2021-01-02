@@ -12,6 +12,7 @@ query featuredPublications($numPosts: Int) {
     excerpt
     date
     publicationName
+    slug
     tags
     title
   }

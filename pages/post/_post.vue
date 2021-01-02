@@ -1,5 +1,5 @@
 <template>
-  <div class='post'>
+  <div v-if='post.contentMd' class='post'>
     <h2 v-text='post.title'></h2>
     <div v-if='post.coverImage'>
       <CoverImage
