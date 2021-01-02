@@ -17,14 +17,17 @@ export default {
 
 <style scoped lang='scss'>
   .experience-card {
-    padding-bottom: 1.5rem;
-    margin-top: 1.5rem;
-
+    margin-top: 0.5rem;
+    
     &__title {
       font-size: 1.5em;
       font-weight: normal;
-      margin: 0.5rem 0;
+      margin: 0;
       font-family: $heading-stack;
+    }
+
+    &__dates {
+      margin: 0  0 0.5rem;
     }
   }
 </style>

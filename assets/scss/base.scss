@@ -38,11 +38,19 @@ body {
   width: 95%;
   max-width: 800px;
   margin: 0 auto 4rem;
+  font-family: $body-stack;
 }
 
 h2 {
   font-family: $heading-stack;
   font-size: 3em;
+  font-weight: normal;
+  margin: 2rem 0 1rem;
+}
+
+h3 {
+  font-family: $heading-stack;
+  font-size: 2em;
   font-weight: normal;
   margin: 2rem 0 1rem;
 }
