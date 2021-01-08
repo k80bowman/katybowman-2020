@@ -38,6 +38,7 @@ export default {
   },
   apollo: {
     post: {
+      prefetch: true,
       query: postQuery,
       variables() {
         return { slug: this.$route.params.post }

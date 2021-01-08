@@ -18,6 +18,7 @@ export default {
   },
   apollo: {
     devPosts: {
+      prefetch: true,
       query: devPostsQuery,
     }
   }

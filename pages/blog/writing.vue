@@ -18,6 +18,7 @@ export default {
   },
   apollo: {
     writingPosts: {
+      prefetch: true,
       query: writingPostsQuery,
     }
   }

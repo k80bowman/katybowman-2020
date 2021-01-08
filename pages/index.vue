@@ -28,6 +28,7 @@
     },
     apollo: {
       featuredPublications: {
+        prefetch: true,
         query: featuredPublicationsQuery,
         variables: { numPosts: 1 },
       },

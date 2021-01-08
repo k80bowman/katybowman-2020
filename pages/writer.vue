@@ -29,10 +29,12 @@
     },
     apollo: {
       featuredPublications: {
+        prefetch: true,
         query: featuredPublicationsQuery,
         variables: { numPosts: 3 },
       },
       writerPagePosts: {
+        prefetch: true,
         query: writerPagePostsQuery,
       }
     }
