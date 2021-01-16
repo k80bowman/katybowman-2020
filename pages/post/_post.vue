@@ -36,14 +36,13 @@ export default {
       post: {},
     }
   },
-  apollo: {
-    post: {
-      prefetch: true,
+  async asyncData ({ app, route }) {
+    const client = app.apolloProvider.defaultClient;
+    const post = await client.query({
       query: postQuery,
-      variables() {
-        return { slug: this.$route.params.post }
-      }
-    }
+      variables: { slug: route.params.post }
+    }).then(({ data }) => data && data.post);
+    return { post };
   },
   mounted() {
     Prism.highlightAll()

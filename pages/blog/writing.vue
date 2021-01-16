@@ -1,6 +1,6 @@
 <template>
   <div class="posts">
-      <h2>Blog Posts - Writing</h2>
+      <h2>Blog Posts & Publications - Writing</h2>
       <PostList :posts="writingPosts" />
     </div>
 </template>
@@ -16,11 +16,12 @@ export default {
       writingPosts: []
     }
   },
-  apollo: {
-    writingPosts: {
-      prefetch: true,
-      query: writingPostsQuery,
-    }
+  async asyncData ({ app }) {
+    const client = app.apolloProvider.defaultClient;
+    const writingPosts = await client.query({
+      query: writingPostsQuery
+    }).then(({ data }) => data && data.writingPosts);
+    return { writingPosts };
   }
 }
 </script>

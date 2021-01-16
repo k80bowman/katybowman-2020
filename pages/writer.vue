@@ -27,16 +27,18 @@
         homePagePosts: []
       }
     },
-    apollo: {
-      featuredPublications: {
-        prefetch: true,
+    async asyncData ({ app }) {
+      const client = app.apolloProvider.defaultClient
+      const featuredPublications = await client.query({
         query: featuredPublicationsQuery,
-        variables: { numPosts: 3 },
-      },
-      writerPagePosts: {
-        prefetch: true,
-        query: writerPagePostsQuery,
-      }
+        variables: { numPosts: 3 }
+      }).then(({ data }) => data && data.featuredPublicationsQuery);
+
+      const writerPagePosts = await client.query({
+        query: writerPagePostsQuery
+      }).then(({ data }) => data && data.writerPagePosts);
+
+      return { featuredPublications, writerPagePosts };
     }
   }
 </script>

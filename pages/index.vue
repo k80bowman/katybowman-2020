@@ -20,20 +20,23 @@
   
   export default {
     name: 'Home',
+    async asyncData ({ app }) {
+      const client = app.apolloProvider.defaultClient;
+      const homePagePosts = await client.query({
+        query: homePagePostsQuery
+      }).then(({ data }) => data && data.homePagePosts);
+
+      const featuredPublications = await client.query({
+        query: featuredPublicationsQuery, 
+        variables: { numPosts: 1 }
+      }).then(({ data }) => data && data.featuredPublications);
+
+      return { homePagePosts, featuredPublications };
+    },
     data() {
       return {
         featuredPublications: [],
         homePagePosts: []
-      }
-    },
-    apollo: {
-      featuredPublications: {
-        prefetch: true,
-        query: featuredPublicationsQuery,
-        variables: { numPosts: 1 },
-      },
-      homePagePosts: {
-        query: homePagePostsQuery,
       }
     }
   }

@@ -16,10 +16,12 @@ export default {
       allPublications: []
     }
   },
-  apollo: {
-    allPublications: {
-      query: allPublicationsQuery,
-    }
+  async asyncData ({ app }) {
+    const client = app.apolloProvider.defaultClient;
+    const allPublications = await client.query({
+      query: allPublicationsQuery
+    }).then(({ data }) => data && data.allPublications);
+    return { allPublications }
   }
 }
 </script>

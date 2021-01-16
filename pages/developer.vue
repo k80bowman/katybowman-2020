@@ -28,22 +28,27 @@
   
   export default {
     name: 'Developer',
+    async asyncData ({ app }) {
+      const client = app.apolloProvider.defaultClient
+      const technicalExperiences = await client.query({
+        query: technicalExperiencesQuery
+      }).then(({ data }) => data && data.technicalExperiences);
+
+      const communityExperiences = await client.query({
+        query: communityExperiencesQuery
+      }).then(({ data }) => data && data.communityExperiences);
+
+      const devPagePosts = await client.query({
+        query: devPagePostsQuery
+      }).then(({ data }) => data && data.devPagePosts);
+
+      return { technicalExperiences, communityExperiences, devPagePosts };
+    },
     data() {
       return {
         technicalExperiences: [],
         communityExperiences: [],
         devPagePosts: []
-      }
-    },
-    apollo: {
-      technicalExperiences: {
-        query: technicalExperiencesQuery
-      },
-      communityExperiences: {
-        query: communityExperiencesQuery
-      },
-      devPagePosts: {
-        query: devPagePostsQuery
       }
     }
   }
