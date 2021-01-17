@@ -12,6 +12,7 @@ query allPublications {
     excerpt
     date
     publicationName
+    publication
     slug
     tags
     title

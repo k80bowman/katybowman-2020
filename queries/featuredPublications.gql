@@ -11,6 +11,7 @@ query featuredPublications($numPosts: Int) {
     coverImageSourceUrl
     excerpt
     date
+    publication
     publicationName
     slug
     tags
