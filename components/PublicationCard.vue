@@ -1,13 +1,13 @@
 <template>
   <div class='publication-card'>
-    <a :href=publication.articleLink>
       <div>
         <p class='publication-card__type'>{{ this.categoryName }}</p>
-        <h3 class='publication-card__title'>{{ publication.title }}</h3>
+        <a :href=publication.articleLink>
+          <h3 class='publication-card__title'>{{ publication.title }}</h3>
+        </a>
         <p class='publication-card__excerpt'>{{ publication.excerpt }}</p>
         <p class='publication-card__publication'>{{ publication.publicationName }}</p>
       </div>
-    </a>
   </div>
 </template>
 
@@ -30,14 +30,6 @@ export default {
     margin-top: 1.5rem;
     box-shadow: 0 1px 0 0 $k80-red;
 
-    &:hover {
-      box-shadow: 0 3px 0 0 $k80-red;
-
-      .publication-card__title {
-        color: $k80-red;
-      }
-    }
-
     a {
       color: $k80-text;
       text-decoration: none;
@@ -53,6 +45,11 @@ export default {
       font-size: 2em;
       font-weight: normal;
       margin: 0.5rem 0;
+
+      &:hover {
+        color: $k80-red;
+        text-decoration: underline $k80-red;
+      }
     }
 
     &__excerpt {

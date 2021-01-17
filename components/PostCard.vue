@@ -1,13 +1,13 @@
 <template>
   <div class='post-card'>
-    <NuxtLink :to=formattedLink>
       <div>
         <p class='post-card__type'>{{ this.categoryName }}</p>
-        <h3 class='post-card__title'>{{ post.title }}</h3>
+        <NuxtLink :to=formattedLink>
+          <h3 class='post-card__title'>{{ post.title }}</h3>
+        </NuxtLink>
         <p class='post-card__excerpt'>{{ post.excerpt }}</p>
         <p class='post-card__date'>{{ this.formattedDate }}</p>
       </div>
-    </NuxtLink>
   </div>
 </template>
 
@@ -42,14 +42,6 @@ export default {
     box-shadow: 0 1px 0 0 $k80-red;
     margin-top: 1.5rem;
 
-    &:hover {
-      box-shadow: 0 3px 0 0 $k80-red;
-
-      .post-card__title {
-        color: $k80-red;
-      }
-    }
-
     a {
       color: $k80-text;
       text-decoration: none;
@@ -65,6 +57,11 @@ export default {
       font-size: 2em;
       font-weight: normal;
       margin: 0.5rem 0;
+
+      &:hover {
+        color: $k80-red;
+        text-decoration: underline $k80-red;
+      }
     }
 
     &__excerpt {

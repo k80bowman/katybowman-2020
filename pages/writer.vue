@@ -32,7 +32,7 @@
       const featuredPublications = await client.query({
         query: featuredPublicationsQuery,
         variables: { numPosts: 3 }
-      }).then(({ data }) => data && data.featuredPublicationsQuery);
+      }).then(({ data }) => data && data.featuredPublications);
 
       const writerPagePosts = await client.query({
         query: writerPagePostsQuery
