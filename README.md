@@ -1,4 +1,4 @@
-# katybowman-2020
+# Katy Bowman
 
 ## Build Setup
 
