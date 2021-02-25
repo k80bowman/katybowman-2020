@@ -54,7 +54,7 @@ export default {
     }
 
     &__title {
-      font-size: 2em;
+      font-size: 1.5em;
       font-weight: normal;
       margin: 0.5rem 0;
 
