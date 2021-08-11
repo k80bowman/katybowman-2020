@@ -6,7 +6,7 @@
           <h3 class='post-card__title'>{{ post.title }}</h3>
         </NuxtLink>
         <p class='post-card__excerpt'>{{ post.excerpt }}</p>
-        <p class='post-card__date'>{{ this.formattedDate }}</p>
+        <p class='post-card__date'>{{ new Date(post.date) | dateFormat('MMM D, YYYY') }}</p>
       </div>
   </div>
 </template>
@@ -14,18 +14,9 @@
 <script>
 import { getCategoryName } from '../helpers/getCategoryName';
 
-const formatDate = (rawDate) => {
-  const date = new Date(rawDate);
-  const dateArray = date.toDateString().split(' ');
-  return `${dateArray[1]} ${dateArray[2]}, ${dateArray[3]}`;
-};
-
 export default {
   props:['post'],
   computed: {
-    formattedDate: function () {
-      return formatDate(this.post.date);
-    },
     formattedLink: function () {
       return `/post/${this.post.slug}`;
     },
