@@ -1,6 +1,7 @@
 <template>
   <div v-if='post.contentMd' class='post'>
     <h2 v-text='post.title'></h2>
+    <p>{{ new Date(post.date) | dateFormat('MMM D, YYYY') }}</p>
     <div v-if='post.coverImage'>
       <CoverImage
         :coverImageUrl='post.coverImage.url'
